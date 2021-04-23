@@ -4,10 +4,11 @@
 
 using namespace std::chrono;
 
-const int TERM = 5;
+const int TERM = 20;
 const int NUM_RUNS = 10;
 
 long long int recursiveFact(int);
+long long int recursiveFact(int, long long int);
 long long int iterativeFact(int);
 
 int main(){
@@ -46,8 +47,18 @@ int main(){
 }
 
 long long int recursiveFact(int term){
-  // put your code here
-  return 0;
+  long long int product = term;
+  return recursiveFact(term - 1, product);
+}
+
+long long int recursiveFact(int term, long long int product)
+{
+	if (term < 1)
+	{
+		return product;
+	}
+	product *= term--;
+	return recursiveFact(term, product);
 }
 
 long long int iterativeFact(int term){
