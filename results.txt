@@ -1,0 +1,16 @@
+Recurs		Iterat
+260		160
+280		170
+270		440	something hung here, likely collided with another memory address in use
+280		170
+300		180
+260		190
+250		170
+270		160
+270		170
+270		170
+
+Recursive appears to be at least a full 100 ns slower, barring rounding from my C++ build.
+Reasoning for this is likely cleanup operations and function set-up whenever we re-call the function
+for a new iteration. This would make using the types for C++ better than brute forcing the
+operation by re-calling it.
