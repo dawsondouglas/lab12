@@ -10,6 +10,9 @@ Recurs		Iterat
 270		170
 270		170
 
+Avg		Avg
+271		198
+
 Recursive appears to be at least a full 100 ns slower, barring rounding from my C++ build.
 Reasoning for this is likely cleanup operations and function set-up whenever we re-call the function
 for a new iteration. This would make using the types for C++ better than brute forcing the
